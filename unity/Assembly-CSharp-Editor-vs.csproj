@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{577E3687-77FD-96F4-5588-F4376F5A06BD}</ProjectGuid>
+	<ProjectGuid>{33C3DCDC-76CB-1FCD-751B-4E7E18D0E2DF}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Facebook\Editor\FacebookPostprocess.cs" />
+     <Compile Include="Assets\Facebook\Editor\FacebookSettingsEditor.cs" />
+     <Compile Include="Assets\Facebook\Editor\android\FacebookAndroidUtil.cs" />
+     <Compile Include="Assets\Facebook\Editor\android\ManifestMod.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\FixupFiles.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\PlistMod.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXBuildFile.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXBuildPhase.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXDictionary.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXFileReference.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXGroup.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXList.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXObject.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXParser.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\PBXProject.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCBuildConfiguration.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCConfigurationList.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCFileOperationQueue.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCMod.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCProject.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCSourceFile.cs" />
+     <Compile Include="Assets\Facebook\Editor\iOS\third_party\XCodeEditor-for-Unity\XCTarget.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\BMFontReader.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\ComponentSelector.cs" />
@@ -124,22 +146,66 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
      <None Include="Assets\NGUI\ReadMe - 3.5.9.txt" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_tooltip_bubble.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_search_bar_layout.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_button.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_friendpickerfragment.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_check.xml" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_blue.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-mdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\facebook\bin\R.txt" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar_stub.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\drawables.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\Plugins\Android\facebook\build.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\styles.xml" />
+     <None Include="Assets\Plugins\Android\facebook\bin\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-es\strings.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_section_header.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_checkbox.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_loginbutton_silver.xml" />
+     <None Include="Assets\Plugins\Android\facebook\bin\proguard.txt" />
+     <None Include="Assets\Plugins\Android\facebook\res\values-ldpi\dimens.xml" />
+     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\values\colors.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_search_box.xml" />
+     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_row.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -167,10 +233,13 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="IFacebook">
+ <HintPath>/Users/Hansangeun/Desktop/Development/SeesTrifort/project-1/unity/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{E95CDE4C-1E41-992A-C012-AF29C8C6BCC2}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+      <Project>{C3DA89E1-70C6-7D6C-993E-C8F831D35880}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
