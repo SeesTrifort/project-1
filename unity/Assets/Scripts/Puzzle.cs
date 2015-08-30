@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class Puzzle : MonoBehaviour {
 
-	PuzzleController controller ;
-	Image image;
+	Game1Controller controller ;
+
+	[SerializeField]
+	UITexture image;
 
 	public int _shapeNum;
 	public int shapeNum{
@@ -13,9 +14,7 @@ public class Puzzle : MonoBehaviour {
 			return _shapeNum;
 		}set{
 			_shapeNum = value;
-			if (image == null) image = gameObject.GetComponent<Image>();
-			image.sprite = controller.puzzleSprites[value];
-			image.color = controller.puzzleColors[value];
+			image.color = controller.gameUI.puzzleColors[value];
 		}
 	}
 
@@ -25,7 +24,8 @@ public class Puzzle : MonoBehaviour {
 			return _lineId;
 		}set{
 			_lineId = value;
-			transform.localPosition = new Vector3(0, 50 * (value+1), 0);
+			transform.localPosition = new Vector3(0, 105 * (value), 0);
+			transform.localScale = Vector3.one;
 			gameObject.name = "puzzle " + value;
 		}
 	}
@@ -33,7 +33,7 @@ public class Puzzle : MonoBehaviour {
 	public int listId;
 
 	void Awake(){
-		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<PuzzleController>();
+		controller = SceneController.mainController as Game1Controller;
 		shapeNum = Random.Range(0,controller.presentShape);
 		listId = controller.presentlistId;
 	}
