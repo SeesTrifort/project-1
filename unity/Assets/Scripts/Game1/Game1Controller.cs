@@ -5,7 +5,7 @@ public class Game1Controller : GameController {
 	[SerializeField] 
 	public Game1UI gameUI;
 
-	public Puzzle[] puzzles;
+	public Game1Icon[] puzzles;
 
 	[HideInInspector]
 	public int presentShape = 0;
@@ -24,7 +24,9 @@ public class Game1Controller : GameController {
 	}
 
 	public override void DataLoaded (){
+
 		gameTimer.SetTimer(Master.game1Data.timerLimit);
+
 		GameSet();
 	}
 
@@ -44,7 +46,7 @@ public class Game1Controller : GameController {
 			gameUI.SetAnswer(ref presentShape);
 		}
 		
-		puzzles = new Puzzle[Master.game1Data.maxLine];
+		puzzles = new Game1Icon[Master.game1Data.maxLine];
 		for (int i = 0; i < Master.game1Data.maxLine; i++) {
 			puzzles[i] = gameUI.MakePrefab(ref presentlistId, Master.game1Data.maxLine);
 		}
@@ -151,7 +153,7 @@ public class Game1Controller : GameController {
 
 		gameUI.messageLabel.text = "Correct : " + correct + "\nWrong : " + wrong + "\nMaxCombo : " + maxcombo;
 		
-		gameUI.btnRetry.SetActive(true);
+		gameUI.retryButton.SetActive(true);
 	}
 
 	public override void TimeOver (){
@@ -159,6 +161,6 @@ public class Game1Controller : GameController {
 	}
 
 	public void Retry(){
-		Application.LoadLevel("Menu");
+		Application.LoadLevel(Constants.Scene.MyPage);
 	}
 }

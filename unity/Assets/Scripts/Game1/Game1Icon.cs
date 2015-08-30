@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Puzzle : MonoBehaviour {
+public class Game1Icon : MonoBehaviour {
 
 	Game1Controller controller ;
 
 	[SerializeField]
 	UITexture image;
 
-	public int _shapeNum;
+	int _shapeNum;
 	public int shapeNum{
 		get{
 			return _shapeNum;
@@ -18,12 +18,8 @@ public class Puzzle : MonoBehaviour {
 		}
 	}
 
-	public int _lineId;
 	public int lineId{
-		get{
-			return _lineId;
-		}set{
-			_lineId = value;
+		set{
 			transform.localPosition = new Vector3(0, 105 * (value), 0);
 			transform.localScale = Vector3.one;
 			gameObject.name = "puzzle " + value;

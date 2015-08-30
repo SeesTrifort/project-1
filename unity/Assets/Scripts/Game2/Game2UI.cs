@@ -1,38 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Game1UI : GameUI {
-
+public class Game2UI : GameUI {
 	public Transform puzzleParent;
-
+	
 	public GameObject puzzlePrefab;
 
 	public Color[] puzzleColors;
 
-	public Transform answerLeft;
-
-	public Transform answerRight;
+	public Transform answer;
 
 	public UILabel messageLabel;
-
+	
 	public GameObject retryButton;
 
-	public void SetAnswer(ref int presentShape){
+	public Game2Icon SetAnswer(int presentShape){
 		GameObject puzzleObject = ((GameObject)GameObject.Instantiate(puzzlePrefab));
-		puzzleObject.transform.SetParent(presentShape%2 == 0 ? answerLeft : answerRight);
+		puzzleObject.transform.SetParent(answer);
 		transform.localScale = Vector3.one;
-		Game1Icon puzzle = puzzleObject.GetComponent<Game1Icon>();
+		Game2Icon puzzle = puzzleObject.GetComponent<Game2Icon>();
 		puzzle.shapeNum = presentShape;
-		puzzle.lineId = (presentShape/2) * -1;
-		presentShape ++;
+		puzzle.listId = -1;
+		return puzzle;
 	}
-	
-	public Game1Icon MakePrefab(ref int presentlistId, int maxLine){
+
+	public Game2Icon MakePrefab(ref int presentlistId, int level, int answer){
 		GameObject puzzleObject = ((GameObject)GameObject.Instantiate(puzzlePrefab));
 		puzzleObject.transform.SetParent(puzzleParent);
 		transform.localScale = Vector3.one;
-		Game1Icon puzzle = puzzleObject.GetComponent<Game1Icon>();
-		puzzle.lineId = Mathf.Min(presentlistId, maxLine);
+		Game2Icon puzzle = puzzleObject.GetComponent<Game2Icon>();
+		int shape = Random.Range(0, Mathf.Min(puzzleColors.Length, level+2));
+		puzzle.shapeNum = shape == answer ? shape + 1 : shape;
+		puzzle.listId = presentlistId;
 		presentlistId ++ ;
 		return puzzle;
 	}
