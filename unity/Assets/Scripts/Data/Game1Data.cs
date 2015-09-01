@@ -7,7 +7,7 @@ public class Game1Data {
 
 	public int maxShape = 2;
 
-	public int maxLine = 9;
+	public int maxLine = 6;
 
 	public int levelupSpan = 30;
 }

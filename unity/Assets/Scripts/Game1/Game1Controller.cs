@@ -82,14 +82,14 @@ public class Game1Controller : GameController {
 		}
 	}
 
-	void Left(){
+	public void Left(){
 		if (gameTimer.timerFlag != 0) return;
 		
 		if (puzzles[0].shapeNum % 2 == 0) Correct();
 		else Wrong();
 	}
 	
-	void Right(){
+	public void Right(){
 		if (gameTimer.timerFlag != 0) return;
 
 		if (puzzles[0].shapeNum % 2 == 1) Correct();

@@ -20,7 +20,7 @@ public class Game1Icon : MonoBehaviour {
 
 	public int lineId{
 		set{
-			transform.localPosition = new Vector3(0, 105 * (value), 0);
+			transform.localPosition = new Vector3(0, 155 * (value), 0);
 			transform.localScale = Vector3.one;
 			gameObject.name = "puzzle " + value;
 		}
