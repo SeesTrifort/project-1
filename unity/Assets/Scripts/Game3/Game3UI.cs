@@ -7,6 +7,7 @@ public class Game3UI : GameUI {
 	
 	public GameObject retryButton;
 
+	public GameObject[] answerButtons;
 
 //	public Game3Icon SetAnswer(int presentShape){
 //		GameObject puzzleObject = ((GameObject)GameObject.Instantiate(puzzlePrefab));
