@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TransactionData : MonoBehaviour {
+public static class TransactionData {
 
-	// Use this for initialization
-	void Start () {
-	
+	public static int GetHightScore(int gameId){
+		return PlayerPrefs.GetInt("HightScore_" + gameId, 0);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public static void SetHightScore(int gameId, int score){
+		PlayerPrefs.SetInt("HightScore_" + gameId, score);
+		PlayerPrefs.Save();
 	}
 }

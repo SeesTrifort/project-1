@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour{
 	
 	int timeLimit = 0;
 
-	int timerFlag = 1;
+	[HideInInspector] public int timerFlag = 1;
 	
 	float miliTime = 0f;
 	
@@ -64,7 +64,16 @@ public class GameTimer : MonoBehaviour{
 			}else{
 				ShowTimer(timeLimit - (int)(miliTime * 100f));
 			}
+
+			if (timerLabel != null){
+				if (time < 500) timerLabel.color = Color.red;
+				else timerLabel.color = Color.white;
+			}
 		}
+	}
+
+	public void PlusTime (float second){
+		miliTime -= second;
 	}
 	
 	public void ShowTimer(int miliSecond){

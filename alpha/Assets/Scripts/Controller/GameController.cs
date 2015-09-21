@@ -3,6 +3,16 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+	public GameData data;
+
+	public GameTimer timer;
+
+	[HideInInspector] public int correct = 0;
+	[HideInInspector] public int wrong = 0;
+	[HideInInspector] public int combo = 0;
+	[HideInInspector] public int maxcombo = 0;
+	[HideInInspector] public int score = 0;
+
 	public virtual void Init(){}
 
 	public virtual void TimeOver(){}
@@ -14,5 +24,9 @@ public class GameController : MonoBehaviour {
 
 	public virtual void ButtonClick(GameObject btn){
 		Debug.Log("ButtonClick " + btn.name);
+	}
+
+	public virtual void Swipe(Vector3 swipeDistance){
+		Debug.Log("Swipe " + swipeDistance);
 	}
 }

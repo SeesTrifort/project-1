@@ -51,8 +51,7 @@ public class PopupController : MonoBehaviour {
 			popup.Hide();
 		}
 
-		newPopup = (GameObject.Instantiate(Resources.Load("Prefabs/Popup/"+popupName)) as GameObject).GetComponent<Popup>();
-		newPopup.transform.SetParent(transform);
+		newPopup = UIUtils.MakePrefab(Resources.Load("Prefabs/Popup/"+popupName), transform).GetComponent<Popup>();
 		newPopup.name = popupName.ToString();
 		newPopup.stackNum = popups.Count;
 		newPopup.Show();

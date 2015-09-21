@@ -13,6 +13,7 @@ public static class MasterData {
 		leftright["gameId"] = 1;
 		leftright["gameName"] = "leftright";
 		leftright["timeLimit"] = 30;
+		leftright["maxColor"] = 10;
 		gameDatas.Add(1, leftright);
 
 		GameMaster.SetData(gameDatas);
