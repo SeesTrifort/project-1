@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Nobel>
-	<setting Background=""></setting>
-	<charSerif Name="aaa" Image="1" ImagePos="L" ImageReset="true">Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1</charSerif>
-	<charSerif Name="bbb" Image="1" ImagePos="R" ImageReset="true">Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2Test2</charSerif>
-	<charSerif Name="ccc" Image="2" ImagePos="C" ImageReset="false">Test3Test3Test3Test3Test3Test3Test3Test3</charSerif>
-</Nobel>

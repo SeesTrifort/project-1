@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nobel>
+	<setting Background="" Animator=""></setting>
+	<charSerif Name="101a" Image="1" ImagePos="L" ImageReset="true" Serif="101Nobel"></charSerif>
+	<choice Type="0" NextPhaseNum="102"></choice>
+</Nobel>

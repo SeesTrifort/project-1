@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
-using System.IO;
 
 [XmlRoot("Nobel")]
 public class Phase {
 
 	public class Setting {
 		[XmlAttribute]
-		public string Background; 
+		public string Background;
+
+		[XmlAttribute]
+		public string Animator;
 	}
 
 	public class CharSerif {
@@ -19,6 +21,28 @@ public class Phase {
 
 		[XmlAttribute]
 		public string Image;
+
+		[XmlAttribute]
+		public string Serif;
+	}
+
+	public class Choice {
+		[XmlAttribute]
+		public int Type;
+
+		[XmlAttribute]
+		public int NextPhaseNum;
+
+		[XmlElement()]
+		public List<Question> question;
+	}
+
+	public class Question {
+		[XmlAttribute]
+		public string Text;
+
+		[XmlAttribute]
+		public int NextPhaseNum;
 	}
 
 
@@ -28,15 +52,10 @@ public class Phase {
 	[XmlElement()]
 	public List<CharSerif> charSerif;
 
+	[XmlElement()]
+	public Choice choice;
+
 }
 
-public class XmlDeserializer
-{
-	public static T DeserializeXml<T> (string _xml_string) where T : class 
-	{
-		StringReader stringReader = new StringReader(_xml_string);			
-		XmlSerializer xmlSerializer = new XmlSerializer (typeof(T));
-		return (T)xmlSerializer.Deserialize(stringReader);
-	}
-}
+
 

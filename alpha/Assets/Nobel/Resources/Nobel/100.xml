@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Nobel>
+	<setting Background="" Animator=""></setting>
+	<charSerif Name="100z" Image="1" ImagePos="L" ImageReset="true" Serif="100 "></charSerif>
+	<charSerif Name="100b" Image="1" ImagePos="R" ImageReset="true" Serif="Test2\nTest2\nTest"></charSerif>
+	<charSerif Name="100c" Image="2" ImagePos="C" ImageReset="false" Serif="100 end" ></charSerif>
+	<choice Type="0"></choice>
+</Nobel>
