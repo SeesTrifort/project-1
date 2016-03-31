@@ -14,7 +14,6 @@ public class ImageType : MonoBehaviour {
 	{
 		if (serif.ImageType == imageType)
 		{
-			Debug.Log(serif.Image);
 			image.sprite = (Sprite)Resources.Load("Image/"+serif.Image , typeof(Sprite));
 			gameObject.SetActive(true);
 		}
