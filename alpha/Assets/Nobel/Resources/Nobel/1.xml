@@ -3,7 +3,7 @@
 	<setting Background="" Animator=""></setting>
 	<charSerif Name="aaa" Image="chara_1" ImageType="1" ImageReset="true" Serif="Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1Test1"></charSerif>
 	<charSerif Name="bbb" Image="chara_2" ImageType="2" ImageReset="true" Serif="Test2\nTest2\nTest"></charSerif>
-	<charSerif Name="ccc" Image="chara_4" ImageType="3" ImageReset="false" BGM="" Serif="33333333333" ></charSerif>
+	<charSerif Name="ccc" Image="chara_4" ImageType="3" ImageReset="false" BGM="" SE="" Serif="33333333333" ></charSerif>
 	<choice Type="3">
 		<question Text="100?" NextPhaseNum="100"></question>
 		<question Text="101?" NextPhaseNum="101"></question>

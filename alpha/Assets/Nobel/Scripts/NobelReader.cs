@@ -16,6 +16,8 @@ public class NobelReader : MonoBehaviour {
 	[SerializeField]
 	ImageType[] imageType;
 
+	int presentPhase;
+
 	Phase phase;
 
 	bool phaseEnd;
@@ -26,11 +28,13 @@ public class NobelReader : MonoBehaviour {
 
 	public void Start() {
 		inputManager = InputManager.Instance;
-		StartReadPhase(1);
+		LoadPhase();
 	}
 
 	void StartReadPhase (int phaseNum)
 	{
+		presentPhase = phaseNum;
+
 		StartCoroutine(ReadPhase(phaseNum));
 	}
 
@@ -122,9 +126,32 @@ public class NobelReader : MonoBehaviour {
 				type.SetDisable();
 			}
 
+			SavePhaseFlag();
+
 			StartReadPhase(InputManager.inputButton);
 
 			InputManager.inputButton = 0;
 		}
 	}
+
+	public void SavePhase () {
+		PlayerPrefs.SetInt("presentPhase", presentPhase);
+		PlayerPrefs.Save();
+	}
+
+	public void LoadPhase () {
+		int loadPhase = PlayerPrefs.GetInt("presentPhase", 1);
+		StartReadPhase(loadPhase);
+	}
+
+	public void SavePhaseFlag () {
+		PlayerPrefs.SetInt(presentPhase.ToString(), 2);
+		PlayerPrefs.Save();
+	}
+
+#if UNITY_EDITOR
+	public void ResetPhaseData () {
+		PlayerPrefs.DeleteAll();
+	}
+#endif
 }
