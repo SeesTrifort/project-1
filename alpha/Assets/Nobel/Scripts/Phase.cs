@@ -23,7 +23,19 @@ public class Phase {
 		public string Image;
 
 		[XmlAttribute]
+		public int ImageType;
+
+		[XmlAttribute]
+		public bool ImageReset;
+
+		[XmlAttribute]
 		public string Serif;
+
+		[XmlAttribute]
+		public string BGM;
+
+		[XmlAttribute]
+		public string SE;
 	}
 
 	public class Choice {

@@ -13,6 +13,9 @@ public class NobelReader : MonoBehaviour {
 	[SerializeField]
 	ChoiceType[] choiceType;
 
+	[SerializeField]
+	ImageType[] imageType;
+
 	Phase phase;
 
 	bool phaseEnd;
@@ -68,6 +71,10 @@ public class NobelReader : MonoBehaviour {
 	{
 		readEnd = false;
 
+		foreach (ImageType type in imageType) {
+			type.SetImage(charSerif);
+		}
+			
 		char[] textArray = charSerif.Serif.ToCharArray();
 
 		nameArea.text = charSerif.Name;
